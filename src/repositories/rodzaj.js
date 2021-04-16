@@ -41,7 +41,7 @@ class RodzajRepository extends RepositoryBase{
 		const sql = `
 		INSERT INTO Rodzaj
 		(model, marka, miejsca, rocznik, cena)
-		VALUES (?, ?, ?, ?);
+		VALUES (?, ?, ?, ?, ?);
 		`;
 		const zmienna = this.db.prepare(sql).run(model, marka, miejsca, rocznik, cena)
 		return zmienna.lastInsertRowid

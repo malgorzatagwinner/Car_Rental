@@ -25,7 +25,13 @@ router.get('/:id(\\d+)', (req, res) => {
 
 router.post("/new", (req, res) => {
 	const nowy_r = req.body;
-	repository.addType(nowy_r.model, nowy_r.marka, nowy_r.miejsca, nowy_r.rocznik, nowy_r.cena)
+	console.log(nowy_r)
+	const id = repository.addType(nowy_r.model, nowy_r.marka, nowy_r.miejsca, nowy_r.rocznik, nowy_r.cena)
+
+	res.json({
+            "message":"success",
+            "id": id
+        })
 }) 
 return ['/rodzaj', router];
 }

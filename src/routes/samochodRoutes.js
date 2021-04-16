@@ -22,5 +22,15 @@ router.get('/:id(\\d+)', (req, res) => {
             "data":rows
         })
 })
+router.post("/new", (req, res) => {
+	const nowy_s = req.body;
+	const id = repository.addCar( nowy_s.rejestracja, nowy_s.Rodzaj_ID)
+
+	res.json({
+            "message":"success",
+            "id": id
+        })
+})
+
 return ['/samochod', router];
 }

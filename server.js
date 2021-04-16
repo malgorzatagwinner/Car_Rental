@@ -61,8 +61,7 @@ passport.use(new LocalStrategy(
     });
   }
 ));
-var session = require("express-session"),
-    bodyParser = require("body-parser");
+var session = require("express-session")
 
 app.use(express.static("public"));
 app.use(session({ secret: "cats" }));

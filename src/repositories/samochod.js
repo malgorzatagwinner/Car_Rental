@@ -19,13 +19,14 @@ class SamochodRepository extends RepositoryBase{
 		}
 		
 	}
-	addCar(id, nr, type){
+	addCar(nr, type){
+		console.log(nr);
 		const sql = `
 			INSERT INTO Samochod
-			(idSamochod, rejestracja, Rodzaj_ID)
-			VALUES (?, ?, ?);`
+			(rejestracja, Rodzaj_ID)
+			VALUES (?, ?);`
 		;
-		const zmienna = this.db.prepare(sql).run(id, nr, type)
+		const zmienna = this.db.prepare(sql).run(nr, type)
 		return zmienna.lastInsertRowid
 	}
 }

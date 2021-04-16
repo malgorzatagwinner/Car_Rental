@@ -27,6 +27,13 @@ class RezerwacjaRepository extends RepositoryBase{
 			throw new Error("WRONG ID")
 		}		
 	}
+	addRez(termin_od, termin_do, Klient_ID, Samochód_ID){
+		const sql = `INSERT INTO Rezerwacja
+		(termin_od, termin_do, Klient_ID, Samochód_ID)
+		VALUES (?, ?, ?, ?);`;
+		const zmienna = this.db.prepare(sql).run(termin_od, termin_do, Klient_ID, Samochód_ID)
+		return zmienna.lastInsertRowid
+	}
 	
 }
 
