@@ -18,7 +18,7 @@
 <body>
      <!-- NAVBAR TODDLER -->
 
-<nav class="navbar navbar-expand-lg navbar-dark container-fluid" id="navbar">
+<nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation" role="tablist">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -28,46 +28,45 @@
 	<!-- icons -->
 	<a href="#"> <span class="material-icons">directions_car</span></a>
 </div>
-</ul>
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0"> 
-      <li class="nav-item active">
-        <a class="nav-link" href="login.html">Zaloguj się</a>
-      </li>
-  </ul>
 </nav>
-<div class = "container">
-<h2>Znajdź wymarzony samochód już teraz!</h2>
-  <form class="d-flex align-items-end" id="search">
-     <div class="form-group" > 
-	<label for="miasto" class="side">Miasto: </label>
-          <input type="text" class="form-control" id="miasto" placeholder="Miasto">
-     </div>
-     <div class="form-group"> 
-      <label for="data_od" class="side">Od: </label>
-	<input class="form-control" type="date" placeholder="2021-12-31" id="data_od">
-     </div>
-     <div class="form-group"> 
-      <label for="czas_od" class="side">Godzina:</label>
-        <input class="form-control" type="time" placeholder="13:45:00" id="czas_od">
-     </div>
-     <div class="form-group"> 
-      <label for="data_do" class="side">Do: </label>
-	<input class="form-control" type="date" placeholder="2021-12-31" id="data_od">
-     </div>
-     <div class="form-group"> 
-      <label for="czas_do" class="side">Godzina:</label>
-        <input class="form-control" type="time" placeholder="13:45:00" id="czas_do">
-     </div>
-     <div class="form-group"> 
-       <button type="submit" class="btn btn-danger"><span class="material-icons">search</span></button>
-     </div> 
-    </form>
+<div class="container">
+<div id = "Ramka" class ="rounded">
+  <form id = "Rameczka">
+  <h2> Zarejestruj się </h2>
+    <div class="form-group">
+      <label for="Name1" class="side">Imię</label>
+      <input type="name" class="form-control" id="Name1">
     </div>
-    <div class = "container-fluid">
-      <img src="./img/zdj.jpg" style="width:100%">
+    <div class="form-group">
+      <label for="Surname1" class="side">Nazwisko</label>
+      <input type="Surname" class="form-control" id="Surname1">
     </div>
-
- <!-- Optional JavaScript -->
+    <div class="form-group">
+  <label for="example-date-input" class="side">Data urodzenia</label>
+    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+</div>
+    <div class="form-group">
+      <label for="DLNumber1" class="side">Numer prawa jazdy</label>
+      <input type="DLNumber" class="form-control" id="DLNumber1">
+    </div>
+    <div class="form-group">
+      <label for="Email1" class="side">Adres e-mail </label>
+      <input type="email" class="form-control" id="Email1" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="Password1" class="side">Hasło</label>
+      <input type="password" class="form-control" id="Password1">
+    </div>
+    <div>
+    <button type="submit" class="btn btn-danger">Zarejestruj się</button>
+    </div>
+    <div style="padding-top:10px">
+	    <a href="#register"><small class = "form-text text-muted">Masz konto? Zaloguj się</small></a>
+    </div>
+  </form>
+</div>
+</div>
+<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

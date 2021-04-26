@@ -2,7 +2,8 @@
 module.exports = (db) => {
 const express = require('express')
 const router = express.Router()
-const repository = new (require('../repositories/rodzaj'))(db)
+const repository = new (require('../repositories/klient'))(db)
+
 
 router.get('/', (req, res) => {
 	const rows = repository.getAll();
@@ -15,7 +16,6 @@ router.get('/', (req, res) => {
 router.get('/:id(\\d+)', (req, res) => {
 	const { id } = req.params;
 	const rows = repository.getbyId(id);
-
 	res.json({
             "message":"success",
             "data":rows
@@ -23,14 +23,14 @@ router.get('/:id(\\d+)', (req, res) => {
 })
 
 router.post("/new", (req, res) => {
-	const nowy_r = req.body;
-	console.log(nowy_r)
-	const id = repository.addType(nowy_r.model, nowy_r.marka, nowy_r.miejsca, nowy_r.rocznik, nowy_r.cena, nowy_r.zdjecie)
+	const klient = req.body;
+	console.log(klient)
+	const id = repository.addType(klient.nazwisko, klient.imie, klient.wiek, klient.mail,  klient.prawo_jazdy, klient.haslo)
 
 	res.json({
             "message":"success",
             "id": id
         })
 }) 
-return ['/api/rodzaj', router];
+return ['/api/klient', router];
 }

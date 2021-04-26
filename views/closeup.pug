@@ -1,0 +1,57 @@
+doctype html
+head
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  // Bootstrap CSS
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css' integrity='sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt' crossorigin='anonymous')
+  link(rel='stylesheet' href='/style.css')
+  link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
+  title CARRENTPOL
+// BODY
+include navbar
+.mx-auto.container(style='width: 100%;')
+  .card.mb-3(style='margin-top: 20%')
+    .row.no-gutters
+      .col-md-4(style='margin-top: 20px; padding: 10px;')
+        img.card-img(src=auto.zdjecie)
+      .col-md-8
+        .card-body
+          h2.card-title(style='text-align:left;') #{auto.marka} #{auto.model}
+          .row(style='text-align:left;')
+            #specs.col-md-7
+              p.card-text
+                | Liczba miejsc: #{auto.miejsca}
+              p.card-text
+                | Rocznik: #{auto.rocznik}
+              p.card-text
+                | Kolor: #{auto.kolor}
+            .col
+              .row
+                span.h3.align-self-start #{auto.cena_cala}zł
+                span.h1.align-self-center |
+                span.card-text.align-self-end #{auto.cena}zł/dzień
+              .row.align-center.mt-4
+                a.btn.btn-danger(style='width:80%' href='/moje/'+from+"/"+to+"/"+auto.idSamochod) Zarezerwuj
+// Optional JavaScript
+// jQuery first, then Popper.js, then Bootstrap JS
+script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js' integrity='sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n' crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo' crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js' integrity='sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P' crossorigin='anonymous')
+script(src='https://kit.fontawesome.com/yourcode.js')
+script.
+  $(document).ready(function(){
+  $('body').scrollspy({target: "#navbarTogglerDemo01", offset:50});
+  });
+script.
+  var elmnt = document.getElementById("content");
+  var nav_height = $('nav').height();
+  $('nav a').click(function(){
+  var offset = $($(this).attr('href')).offset();
+  $('html, body').scrollTop(offset.top - nav_height - 20);
+  return false;
+  });
+  function scrollToTop() {
+  elmnt.scrollIntoView(true); // Top
+  }
+

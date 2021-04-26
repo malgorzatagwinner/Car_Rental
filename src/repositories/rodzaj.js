@@ -37,14 +37,27 @@ class RodzajRepository extends RepositoryBase{
 		return zmienna
 	}
 	
-	addType(model, marka, miejsca, rocznik, cena){
+	addType(model, marka, miejsca, rocznik, cena, zdjecie){
 		const sql = `
 		INSERT INTO Rodzaj
-		(model, marka, miejsca, rocznik, cena)
-		VALUES (?, ?, ?, ?, ?);
+		(model, marka, miejsca, rocznik, cena, zdjecie)
+		VALUES (?, ?, ?, ?, ?, ?);
 		`;
-		const zmienna = this.db.prepare(sql).run(model, marka, miejsca, rocznik, cena)
+		const zmienna = this.db.prepare(sql).run(model, marka, miejsca, rocznik, cena, zdjecie)
 		return zmienna.lastInsertRowid
-	}	
+	}
+	modifyType(id, model, marka, miejsca, rocznik, cena){
+		const sql = `UPDATE Rodzaj
+		SET model = @model, marka = @marka, miejsca = @miejsca,
+		rocznik = @rocznik, cena = @cena, zdjecie = @zdjecie
+		WHERE idRodzaj = @id 
+		`
+		this.db.prepare(sql).run({id, model, marka, miejsca, rocznik, cena, zdjecie})
+	}
+	deleteType(id){
+		const sql = `DELETE FROM Rodzaj
+		WHERE idRodzaj = @id`
+		this.db.prepare(sql).run({id})
+	}
 }
 module.exports = RodzajRepository;

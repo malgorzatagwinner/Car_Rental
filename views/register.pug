@@ -1,0 +1,75 @@
+- var errors = errors || {}
+doctype html
+head
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  // Bootstrap CSS
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css' integrity='sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt' crossorigin='anonymous')
+  link(rel='stylesheet' href='/style.css')
+  link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
+  title CARRENTPOL
+// BODY
+body
+ include navbar
+.container
+  #Ramka.rounded
+    form#Rameczka(method="post")
+      h2  Zarejestruj si&eogon; 
+      .form-group
+        label.side(for='imie') Imi&eogon;
+        input#Name1.form-control(type='name' name='imie')
+        if errors.imie
+          small.form-text.text-muted= errors.imie.msg
+      .form-group
+        label.side(for='nazwisko') Nazwisko
+        input#Surname1.form-control(type='Surname' name='nazwisko')
+        if errors.nazwisko
+          small.form-text.text-muted= errors.nazwisko.msg
+      .form-group
+        label.side(for='data_ur') Data urodzenia
+        input#example-date-input.form-control(type='date' name='data_ur') 
+        if errors.data_ur
+          small.form-text.text-muted= errors.data_ur.msg
+      .form-group
+        label.side(for='prawo_jazdy') Numer prawa jazdy
+        input#DLNumber1.form-control(type='DLNumber' name='prawo_jazdy')
+        if errors.prawo_jazdy
+          small.form-text.text-muted= errors.prawo_jazdy.msg
+      .form-group
+        label.side(for='mail') Adres e-mail 
+        input#Email1.form-control(type='email' aria-describedby='emailHelp' name='mail')
+        if errors.mail
+          small.form-text.text-muted= errors.mail.msg
+      .form-group
+        label.side(for='haslo') Has&lstrok;o
+        input#Password1.form-control(type='password' name='haslo')
+        if errors.haslo
+          small.form-text.text-muted= errors.haslo.msg
+      div
+        button.btn.btn-danger(type='submit') Zarejestruj si&eogon;
+      div(style='padding-top:10px')
+        a(href='/login')
+          small.form-text.text-muted Masz konto? Zaloguj si&eogon;
+// Optional JavaScript
+// jQuery first, then Popper.js, then Bootstrap JS
+script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js' integrity='sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n' crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo' crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js' integrity='sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P' crossorigin='anonymous')
+script(src='https://kit.fontawesome.com/yourcode.js')
+script.
+  $(document).ready(function(){
+  $('body').scrollspy({target: "#navbarTogglerDemo01", offset:50});
+  });
+script.
+  var elmnt = document.getElementById("content");
+  var nav_height = $('nav').height();
+  $('nav a').click(function(){
+  var offset = $($(this).attr('href')).offset();
+  $('html, body').scrollTop(offset.top - nav_height - 20);
+  return false;
+  });
+  function scrollToTop() {
+  elmnt.scrollIntoView(true); // Top
+  }
+

@@ -1,0 +1,11 @@
+extend layout
+block content
+  .container
+    ul
+      li
+        a(href='/admin/samochod/new') nowy
+      each x in lista
+        li
+          a(href='/admin/samochod/'+ x.idSamochod )= x.Rodzaj_ID + ". "+x.rejestracja
+          a(href='/admin/samochod/delete/'+x.idSamochod) DELETE
+

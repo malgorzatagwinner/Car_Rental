@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../public/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
@@ -31,42 +31,49 @@
 </ul>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0"> 
       <li class="nav-item active">
-        <a class="nav-link" href="login.html">Zaloguj się</a>
+        <a class="nav-link" href="#Moje rezerwacje">Moje rezerwacje</a>
       </li>
+      <div class="dropdown">
+  	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Mój profil
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="podstrona_pomme.html#Adieu_mon_homme">Edytuj profil</a>
+    <a class="dropdown-item" href="podstrona_pomme.html#JaneJohn">Wyloguj</a>
+  </div>
+  </div>
   </ul>
 </nav>
-<div class = "container">
-<h2>Znajdź wymarzony samochód już teraz!</h2>
-  <form class="d-flex align-items-end" id="search">
-     <div class="form-group" > 
-	<label for="miasto" class="side">Miasto: </label>
-          <input type="text" class="form-control" id="miasto" placeholder="Miasto">
-     </div>
-     <div class="form-group"> 
-      <label for="data_od" class="side">Od: </label>
-	<input class="form-control" type="date" placeholder="2021-12-31" id="data_od">
-     </div>
-     <div class="form-group"> 
-      <label for="czas_od" class="side">Godzina:</label>
-        <input class="form-control" type="time" placeholder="13:45:00" id="czas_od">
-     </div>
-     <div class="form-group"> 
-      <label for="data_do" class="side">Do: </label>
-	<input class="form-control" type="date" placeholder="2021-12-31" id="data_od">
-     </div>
-     <div class="form-group"> 
-      <label for="czas_do" class="side">Godzina:</label>
-        <input class="form-control" type="time" placeholder="13:45:00" id="czas_do">
-     </div>
-     <div class="form-group"> 
-       <button type="submit" class="btn btn-danger"><span class="material-icons">search</span></button>
-     </div> 
-    </form>
+ <div class="mx-auto container" style="width: 100%;">
+  <div class="card mb-3" style="margin-top: 20%">
+    <div class="row no-gutters">
+	<div class="col-md-4" style="margin-top: 20px; padding: 10px;">
+  	    <img src="./img/car_abcd.jpg" class="card-img">
+  	</div>
+        <div class="col-md-8">
+	  <div class="card-body">
+            <h2 class="card-title" style="text-align:left;">Samochód ABCD</h2>
+	    <div class="row">  
+	      <div class="col-md-7" id = "specs">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+	      <div class="col">
+   	        <div class="row">             
+	          <span class="h3">400zł</span> <span class="h1">|</span> <span class="card-text align-bottom">40zł/dzień</span>
+		</div>
+		<div class="row" style="items-align: center;">
+	          <button type="submit" class="btn btn-danger" style="width:100%">Zarezerwuj</button>
+	        </div>
+	      </div>
+            </div>
+          </div>
+        </div>
     </div>
-    <div class = "container-fluid">
-      <img src="./img/zdj.jpg" style="width:100%">
-    </div>
+  </div>
+ </div>
 
+ </div>
  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

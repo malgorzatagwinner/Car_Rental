@@ -1,0 +1,30 @@
+- var dane = dane || {}
+- var errors = errors || {}
+div
+  if user
+    form#search.d-flex.align-items-start(method="post")
+      .form-group.flex-grow-1
+        label.side(for='data_od') Od: 
+        input#data_od.form-control(type='date' name='data_od' value=dane.data_od)
+        if errors.data_od
+          small.form-text.text-muted= errors.data_od.msg
+      .form-group.flex-grow-1
+        label.side(for='czas_od') Godzina:
+        input#czas_od.form-control(type='time' name='czas_od' value=dane.czas_od )
+        if errors.czas_od
+          small.form-text.text-muted= errors.czas_od.msg
+      .form-group.flex-grow-1
+        label.side(for='data_do') Do: 
+        input#data_od.form-control(type='date' name='data_do' value=dane.data_do)
+        if errors.data_do
+          small.form-text.text-muted= errors.data_do.msg
+      .form-group.flex-grow-1
+        label.side(for='czas_do') Godzina:
+        input#czas_do.form-control(type='time' name='czas_do' value=dane.czas_do)
+        if errors.czas_do
+          small.form-text.text-muted= errors.czas_do.msg
+      .form-group.align-self-center
+        button.btn.btn-danger(type='submit')
+          span.material-icons search
+  else
+    p Zaloguj się, aby móc wypożyczyć samochód!

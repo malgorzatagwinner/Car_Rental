@@ -1,0 +1,15 @@
+extend layout
+block content
+  .container
+    ul
+      each x in lista
+        li
+          //a(href='/admin/rezerwacje/'+ x.idRezerwacja )= x.termin_od + x.termin_do
+          | #{x.termin_od} - #{x.termin_do} (#{x.nazwisko}) #{x.marka} #{x.model}
+          |
+          |
+          a(href='/admin/rezerwacje/confirm/'+ x.idRezerwacja )= x.isconfirmed? "Potwierdzona":"Niepotwierdzona"
+          |
+          |
+          a(href='/admin/rezerwacje/delete/'+x.idRezerwacja) DELETE
+

@@ -1,0 +1,11 @@
+extend layout
+block content
+  .container
+    ul
+      li
+        a(href='/klient/new') nowy
+      each x in lista
+        li
+          a(href='/klient/'+ x.idKlient)= x.nazwisko + x.imie
+          a(href='/klient/delete/'+x.idKlient) DELETE
+

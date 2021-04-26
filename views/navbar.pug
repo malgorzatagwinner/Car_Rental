@@ -1,0 +1,38 @@
+nav#navbar.navbar.navbar-expand-lg.navbar-dark.container-fluid
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarTogglerDemo01' aria-controls='navbarTogglerDemo01' aria-expanded='false' aria-label='Toggle navigation' role='tablist')
+    span.navbar-toggler-icon
+  #navbarTogglerDemo01.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+      // icon library
+      // icons
+      a(href='/')
+        span.material-icons directions_car
+  if user
+    ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+      if user.isAdmin
+        li.nav-item.active
+          a.nav-link(href='/admin/rezerwacje') Rezerwacje
+        li.nav-item.active
+          a.nav-link(href='/admin/rodzaj') Rodzaje
+        li.nav-item.active
+          a.nav-link(href='/admin/samochod') Samochody
+        li.nav-item.active
+          a.nav-link(href='/logout') Wyloguj
+      else
+        li.nav-item.active
+          a.nav-link(href='/moje_rezerwacje') Moje rezerwacje
+        .dropdown
+          button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+            | M&oacute;j profil
+          .dropdown-menu(aria-labelledby='dropdownMenuButton')
+            a.dropdown-item(href='/moje_konto/delete') Usuń konto
+            a.dropdown-item(href='/logout') Wyloguj
+
+  
+  else
+    ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+      li.nav-item.active
+        a.nav-link(href='/register') Zarejestruj si&eogon;
+      li.nav-item.active
+        a.nav-link(href='/login') Zaloguj si&eogon;
+

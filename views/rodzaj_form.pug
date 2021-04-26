@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  .container
+    h1 RODZAJ
+    form(method='POST' action='')
+      div.form-group
+        if id
+          input(type='hidden', name='id', value=id)
+        label(for='model') Model:
+        input.form-control(type='text', placeholder='Model samochodu' name='model' value=(undefined===rodzaj ? '' : rodzaj.model))
+        
+        br
+        label(for='marka') Marka:
+        input.form-control(type='text', placeholder='Marka samochodu' name='marka' value=(undefined===rodzaj ? '' : rodzaj.marka))
+      
+        br
+        label(for='miejsca') Miejsca:
+        input.form-control(type='number', placeholder='Liczba miejsc' name='miejsca' value=(undefined===rodzaj ? '' : rodzaj.miejsca))
+        
+        br
+        label(for='rocznik') Rocznik:
+        input.form-control(type='number', placeholder='Rocznik' name='rocznik' value=(undefined===rodzaj ? '' : rodzaj.rocznik))
+        
+        br
+        label(for='cena') Cena:
+        input.form-control(type='number', placeholder='Cena za dzień' name='cena' value=(undefined===rodzaj ? '' : rodzaj.cena))
+        
+        br
+        label(for='zdjecie') Zdjecie:
+        input.form-control(type='text', placeholder='ścieżka/zdjecia' name='zdjecie' value=(undefined===rodzaj ? '' : rodzaj.zdjecie))
+      
+      button.btn.btn-primary(type='submit') Submit
+
+    if errors
+     ul
+      for error in errors
+       li!= error.msg

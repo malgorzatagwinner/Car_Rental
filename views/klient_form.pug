@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  .container
+		h1 KLIENT
+
+		form(method='POST' action='')
+		  div.form-group
+		    if id
+		      input(type='hidden', name='id', value=id)
+		    label(for='nazwisko') Nazwisko:
+		    input.form-control(type='text', placeholder='Kowalski' name='nazwisko' value=(undefined===klient ? '' : klient.nazwisko))
+		    
+		    br
+		    label(for='imie') Imię:
+		    input.form-control(type='text', placeholder='Jan' name='imie' value=(undefined===klient ? '' : klient.imie))
+		  
+		    br
+		    label(for='wiek') Wiek:
+		    input.form-control(type='number', name='wiek' value=(undefined===klient ? '' : klient.wiek))
+		    
+		    br
+		    label(for='mail') E-mail:
+		    input.form-control(type='text', placeholder='abc@def.com' name='mail' value=(undefined===klient ? '' : klient.mail))
+		    
+		    br
+		    label(for='prawo_jazdy') Prawo jazdy:
+		    input.form-control(type='number', name='prawo_jazdy' value=(undefined===klient ? '' : klient.prawo_jazdy))
+		  
+		  button.btn.btn-primary(type='submit') Submit
+
+		if errors
+		 ul
+		  for error in errors
+		   li!= error.msg

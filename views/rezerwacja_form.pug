@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  .container
+    h1 REZERWACJA
+    form(method='POST' action='')
+      div.form-group
+        if id
+          input(type='hidden', name='id', value=id)
+        label(for='model') Termin od:
+        input.form-control(type='date', placeholder='Dzień' name='termin_od' value=(undefined===rezerwacja ? '' : rezerwacja.termin_od))
+        
+        br
+        label(for='date') Termin do:
+        input#date.form-control(type='date', placeholder='Dzień' name='termin_do' value=(undefined===rezerwacja ? '' : rezerwacja.termin_do))
+      
+        br
+        label(for='miejsca') Klient:
+        input.form-control(type='number', placeholder='Klient_ID' name='Klient_ID' value=(undefined===rezerwacja ? '' : rezerwacja.Klient_ID))
+        
+        br
+        label(for='rocznik') Samochód:
+        input.form-control(type='number', placeholder='Samochód_ID' name='Samochod_ID' value=(undefined===rezerwacja ? '' : rezerwacja.Samochod_ID))
+       
+      button.btn.btn-primary(type='submit') Submit
+
+    if errors
+     ul
+      for error in errors
+       li!= error.msg

@@ -29,6 +29,15 @@ router.get('/:id(\\d+)', (req, res) => {
             "data":rows
         })
 })
+router.post("/new", (req, res) => {
+	const rezerwacja = req.body;
+	console.log(rezerwacja)
+	const id = repository.addType(rezerwacja.termin_od, rezerwacja.termin_do, rezerwacja.Klient_ID,rezerwacja.Samochod_ID)
 
-return ['/rezerwacja', router];
+	res.json({
+            "message":"success",
+            "id": id
+        })
+}) 
+return ['/api/rezerwacja', router];
 }

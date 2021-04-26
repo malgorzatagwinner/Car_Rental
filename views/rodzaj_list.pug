@@ -1,0 +1,10 @@
+extend layout
+block content
+  .container
+		ul
+		  li
+		    a(href='/admin/rodzaj/new') nowy
+		  each x in lista
+		    li
+		      a(href='/admin/rodzaj/'+ x.idRodzaj )= x.model
+		      a(href='/admin/rodzaj/delete/'+ x.idRodzaj ) DELETE
